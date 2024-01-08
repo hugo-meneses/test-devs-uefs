@@ -1,7 +1,7 @@
 <div class="container h-100 mt-5">
     <div class="row h-100 justify-content-center align-items-center">
       <div class="col-10 col-md-8 col-lg-6">
-        <h3>Add a Post</h3>
+        <h3>Adicionar Post</h3>
         <form action="{{ route('posts.store') }}" method="post">
           @csrf
           <div class="form-group">
@@ -13,7 +13,7 @@
             <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
           </div>
           <br>
-          <button type="submit" class="btn btn-primary">Create Post</button>
+          <button type="submit" class="btn btn-primary">Criar Post</button>
         </form>
       </div>
     </div>
