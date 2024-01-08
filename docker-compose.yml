@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+
+  # PHP com todos as Extensões instaladas
+  api:
+    image: api-crud-doc
+    container_name: api-crud
+    ports:
+      - "8200:80"
+    volumes:
+      - ./:/app # <!--se for lumen
+      #- ./:/var/www # <!--se for swoole
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD:
+      MYSQL_DB: posts
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: <your-password>
+      MYSQL_DATABASE: todos
+
+volumes:
+  todo-mysql-data:
